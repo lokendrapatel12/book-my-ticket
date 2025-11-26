@@ -1,5 +1,8 @@
 package com.jsp.book.service;
 
-public class UserServiceImp {
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceImp implements UserService{
 
 }
