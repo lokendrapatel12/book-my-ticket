@@ -7,5 +7,11 @@ import com.jsp.book.entity.User;
 public interface UserReposistory  extends  JpaRepository<User, Long>{
 
 	boolean existsByEmail(String email);
+	
+	
+
+	void deleteByRole(String string);
+
+	User findByEmail(String email);
 
 }
