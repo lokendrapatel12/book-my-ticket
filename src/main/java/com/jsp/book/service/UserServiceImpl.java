@@ -50,4 +50,11 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public String logout(HttpSession session, RedirectAttributes attributes) {
+		session.removeAttribute("user");
+		attributes.addFlashAttribute("pass", "Logout Success");
+		return "redirect:/main";
+	}
+
 }

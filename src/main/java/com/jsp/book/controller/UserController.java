@@ -22,12 +22,12 @@ public class UserController {
 
 	@GetMapping("/")
 	public String loadMain() {
-		return "main.html";
+		return "main";
 	}
 
 	@GetMapping("/register")
 	public String loadRegister(UserDto userDto) {
-		return "register.html";
+		return "register";
 	}
 
 	@PostMapping("/register")
@@ -37,11 +37,16 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String loadLogin() {
-		return "login.html";
+		return "login";
 	}
 	
 	@PostMapping("/login")
 	public String login(LoginDto dto,RedirectAttributes attributes,HttpSession session) {
 		return userService.login(dto,attributes,session);
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session,RedirectAttributes attributes) {
+		return userService.logout(session,attributes);
 	}
 }
